@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 80% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 80% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 80% 15%;
+    --primary: 220 800% 25%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 95%;
+    --secondary-foreground: 220 80% 25%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 30% 45%;
+    --accent: 220 80% 92%;
+    --accent-foreground: 220 80% 25%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 80% 25%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 80% 10%;
+    --foreground: 0 0% 98%;
+    --card: 220 70% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 70% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 40% 18%;
+    --muted-foreground: 220 20% 65%;
+    --accent: 220 50% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 40% 22%;
+    --input: 220 40% 22%;
+    --ring: 220 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    /* Support for iPhone notch / safe areas */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    /* Prevent pull-to-refresh on mobile */
+    overscroll-behavior-y: contain;
+    /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better touch targets for mobile */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+  
+  /* Prevent zoom on input focus on iOS */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: inherit !important;
+    }
+  }
+}
+
+/* Safe area utilities */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Mobile-friendly scrollbar */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+}
