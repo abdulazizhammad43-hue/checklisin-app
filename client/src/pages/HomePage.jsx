@@ -30,11 +30,11 @@ const createColumns = (onDelete) => [
   },
   {
     accessorKey: 'name',
-    header: 'Nama',
+    header: 'Defect',
   },
   {
     accessorKey: 'defect_type',
-    header: 'Defect',
+    header: 'Komponen Struktur',
   },
   {
     accessorKey: 'lantai',
@@ -45,6 +45,13 @@ const createColumns = (onDelete) => [
     header: 'As',
     cell: ({ row }) => (
       <div className="whitespace-nowrap">{row.getValue('as_location')}</div>
+    ),
+  },
+  {
+    accessorKey: 'created_by_name',
+    header: 'Pekerja',
+    cell: ({ row }) => (
+      <div className="whitespace-nowrap">{row.original.created_by_username || '-'}</div>
     ),
   },
   {
