@@ -543,7 +543,7 @@ function HomePage() {
             <div className="overflow-y-auto flex-1 p-4 sm:p-6">
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Nama</label>
+                  <label className="block text-sm font-medium mb-1">Defect</label>
                   <input
                     type="text"
                     required
@@ -553,14 +553,14 @@ function HomePage() {
                   />
                 </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Defect</label>
+                <label className="block text-sm font-medium mb-1">Komponen Struktur</label>
                 <select
                   required
                   value={formData.defect_type}
                   onChange={(e) => setFormData({ ...formData, defect_type: e.target.value })}
                   className="w-full px-3 py-2.5 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="">Pilih Defect</option>
+                  <option value="">Pilih Komponen</option>
                   <option value="Kolom">Kolom</option>
                   <option value="Balok">Balok</option>
                   <option value="Pelat">Pelat</option>
